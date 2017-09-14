@@ -1,0 +1,41 @@
+<%= form_for @changeset, @action, fn f -> %>
+  <%= if @changeset.action do %>
+    <div class="alert alert-danger">
+      <p>Oops, something went wrong! Please check the errors below.</p>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= label f, :date, class: "control-label" %>
+    <%= text_input f, :date, class: "form-control" %>
+    <%= error_tag f, :date %>
+  </div>
+
+  <div class="form-group">
+    <%= label f, :number_of_rsvps, class: "control-label" %>
+    <%= number_input f, :number_of_rsvps, class: "form-control" %>
+    <%= error_tag f, :number_of_rsvps %>
+  </div>
+
+  <div class="form-group">
+    <%= label f, :number_of_attendees, class: "control-label" %>
+    <%= number_input f, :number_of_attendees, class: "form-control" %>
+    <%= error_tag f, :number_of_attendees %>
+  </div>
+
+  <div class="form-group">
+    <%= label f, :number_of_pizzas_ordered, class: "control-label" %>
+    <%= number_input f, :number_of_pizzas_ordered, class: "form-control" %>
+    <%= error_tag f, :number_of_pizzas_ordered %>
+  </div>
+
+  <div class="form-group">
+    <%= label f, :number_of_pizzas_left, class: "control-label" %>
+    <%= number_input f, :number_of_pizzas_left, step: "any", class: "form-control" %>
+    <%= error_tag f, :number_of_pizzas_left %>
+  </div>
+
+  <div class="form-group">
+    <%= submit "Submit", class: "btn btn-primary" %>
+  </div>
+<% end %>

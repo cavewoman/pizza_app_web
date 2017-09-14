@@ -1,0 +1,33 @@
+<h2>Show event</h2>
+
+<ul>
+
+  <li>
+    <strong>Date:</strong>
+    <%= @event.date %>
+  </li>
+
+  <li>
+    <strong>Number of rsvps:</strong>
+    <%= @event.number_of_rsvps %>
+  </li>
+
+  <li>
+    <strong>Number of attendees:</strong>
+    <%= @event.number_of_attendees %>
+  </li>
+
+  <li>
+    <strong>Number of pizzas ordered:</strong>
+    <%= @event.number_of_pizzas_ordered %>
+  </li>
+
+  <li>
+    <strong>Number of pizzas left:</strong>
+    <%= @event.number_of_pizzas_left %>
+  </li>
+
+</ul>
+
+<%= link "Edit", to: event_path(@conn, :edit, @event) %>
+<%= link "Back", to: event_path(@conn, :index) %>

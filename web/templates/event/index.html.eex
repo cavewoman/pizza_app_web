@@ -1,0 +1,34 @@
+<h2>Listing events</h2>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Date</th>
+      <th>Number of rsvps</th>
+      <th>Number of attendees</th>
+      <th>Number of pizzas ordered</th>
+      <th>Number of pizzas left</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for event <- @events do %>
+    <tr>
+      <td><%= event.date %></td>
+      <td><%= event.number_of_rsvps %></td>
+      <td><%= event.number_of_attendees %></td>
+      <td><%= event.number_of_pizzas_ordered %></td>
+      <td><%= event.number_of_pizzas_left %></td>
+
+      <td class="text-right">
+        <%= link "Show", to: event_path(@conn, :show, event), class: "btn btn-default btn-xs" %>
+        <%= link "Edit", to: event_path(@conn, :edit, event), class: "btn btn-default btn-xs" %>
+        <%= link "Delete", to: event_path(@conn, :delete, event), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs" %>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<%= link "New event", to: event_path(@conn, :new) %>

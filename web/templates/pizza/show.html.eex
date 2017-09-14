@@ -1,0 +1,28 @@
+<h2>Show pizza</h2>
+
+<ul>
+
+  <li>
+    <strong>Name:</strong>
+    <%= @pizza.name %>
+  </li>
+
+  <li>
+    <strong>Type:</strong>
+    <%= @pizza.type %>
+  </li>
+
+  <li>
+    <strong>Price:</strong>
+    <%= @pizza.price %>
+  </li>
+
+  <li>
+    <strong>Toppings:</strong>
+    <%= @pizza.toppings %>
+  </li>
+
+</ul>
+
+<%= link "Edit", to: pizza_path(@conn, :edit, @pizza) %>
+<%= link "Back", to: pizza_path(@conn, :index) %>

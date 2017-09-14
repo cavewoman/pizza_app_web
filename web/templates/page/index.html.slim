@@ -1,8 +1,8 @@
 .jumbotron
   h2
-    =gettext "Welcome to %{name}", name: "your Razor Phoenix app!"
-  p.lead
-    |A productive web framework that<br />does not compromise speed and maintainability.
+    <%= link "Pizzas", to: pizza_path(@conn, :index) %>
+  h2
+    <%= link "Events", to: event_path(@conn, :index) %>
 
 hr
 #js-demo Uh oh, this text should have been replaced by pizza_app_web.js.

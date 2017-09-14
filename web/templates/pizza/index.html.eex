@@ -1,0 +1,32 @@
+<h2>Listing pizzas</h2>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Price</th>
+      <th>Toppings</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for pizza <- @pizzas do %>
+    <tr>
+      <td><%= pizza.name %></td>
+      <td><%= pizza.type %></td>
+      <td><%= pizza.price %></td>
+      <td><%= pizza.toppings %></td>
+
+      <td class="text-right">
+        <%= link "Show", to: pizza_path(@conn, :show, pizza), class: "btn btn-default btn-xs" %>
+        <%= link "Edit", to: pizza_path(@conn, :edit, pizza), class: "btn btn-default btn-xs" %>
+        <%= link "Delete", to: pizza_path(@conn, :delete, pizza), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs" %>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<%= link "New pizza", to: pizza_path(@conn, :new) %>

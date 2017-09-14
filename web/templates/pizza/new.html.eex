@@ -1,0 +1,6 @@
+<h2>New pizza</h2>
+
+<%= render "form.html", changeset: @changeset,
+                        action: pizza_path(@conn, :create) %>
+
+<%= link "Back", to: pizza_path(@conn, :index) %>
